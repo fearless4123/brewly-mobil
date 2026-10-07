@@ -1,38 +1,46 @@
 # Proje Fikri ve Konsept Belgesi
 
-> ✍️ **Öğrenci Görevi:** Bu taslağı seçtiğiniz proje fikrine göre doldurun. Ayrıntılı rehber ve 40 örnek proje için [`docs/tasks/week-3/02-proje-fikriniz.task.md`](tasks/week-3/02-proje-fikriniz.task.md) dosyasını inceleyin.
-
----
-
 ## 1. Proje Künyesi
 
-- **Proje Adı:** [Projenizin Adı]
-- **Slogan / Tek Cümlelik Tanım:** [Örn: Üniversite öğrencileri için hızlı kampüs rehberi]
-- **Öğrenci Adı Soyadı:** [Adınız Soyadınız]
-- **Öğrenci Numarası:** [Öğrenci Numaranız]
-- **İlham Alınan Konsept / Platform:** [Örn: Spotify / Getir / Duolingo / Tesla / Kendi Fikrim]
-
----
+- **Proje Adı:** Brewly
+- **Slogan / Tek Cümlelik Tanım:** Kahveni seç, kişiselleştir ve siparişini hızlıca oluştur.
+- **Öğrenci Adı Soyadı:** Yağız Genç
+- **Öğrenci Numarası:** 2520191020
+- **İlham Alınan Konsept / Platform:** Kahve Siparişi / Starbucks
 
 ## 2. Proje Amacı ve Çözülen Problem
 
-[Uygulamanız hangi sorunu çözüyor? Kullanıcı ne yapacak? 2-3 cümleyle açıklayın.]
-
----
+Brewly, kullanıcıların kahve çeşitlerini inceleyip boyut, süt ve ekstra seçeneklerini belirleyerek kolayca sipariş oluşturmasını sağlayan bir masaüstü uygulamasıdır. Kullanıcı siparişini onayladığında Rust backend tarafından benzersiz bir sipariş kodu üretilir ve sipariş sonucu kullanıcıya gösterilir.
 
 ## 3. Temel Ekranlar ve İşlevler
 
 1. **Ana Liste Ekranı (Keşfet):**
-   - [Hangi öğeler listelenecek? Hangi filtreler olacak?]
-2. **Detay ve Seçim Ekranı:**
-   - [Öğenin detayında hangi bilgiler, seçenekler ve butonlar yer alacak?]
-3. **Kayıt / Kod Üretme Ekranı (Rust Backend):**
-   - [Rust komutu ne tür bir işlem veya onay/takip kodu üretecek?]
-4. **Profil ve Ayarlar:**
-   - [Kullanıcı hangi bilgilerini görecek ve hangi ayarları değiştirebilecek?]
+   - Espresso, Americano, Latte, Cappuccino ve Mocha gibi kahveler listelenir.
+   - Arama ve kategori filtreleme bulunur.
+   - Popüler kahveler ayrı bir bölümde gösterilir.
 
----
+2. **Detay ve Seçim Ekranı:**
+   - Kahvenin adı, açıklaması, fiyatı ve görseli gösterilir.
+   - Küçük, orta ve büyük boy seçenekleri sunulur.
+   - Normal, yulaf ve badem sütü gibi süt seçenekleri bulunur.
+   - Ekstra shot ve şurup gibi ek seçenekler seçilebilir.
+   - Kullanıcı ürünü sipariş listesine ekler.
+
+3. **Kayıt / Kod Üretme Ekranı (Rust Backend):**
+   - Seçilen kahveler ve toplam tutar gösterilir.
+   - Kullanıcı siparişi onaylar.
+   - Rust backend benzersiz bir sipariş kodu üretir. Örnek: `BREW-7K29XQ`.
+   - Sipariş sonucu ve oluşturulan kod kullanıcıya gösterilir.
+
+4. **Profil ve Ayarlar:**
+   - Kullanıcının son siparişleri gösterilir.
+   - Açık/koyu tema seçilebilir.
+   - Uygulama dili TR, EN, AR ve FA olarak değiştirilebilir.
 
 ## 4. Hedef Kitle
 
-[Bu uygulamayı kimler kullanacak?]
+Brewly; hızlı ve kişiselleştirilmiş kahve siparişi vermek isteyen öğrenciler, çalışanlar ve günlük kahve tüketen kullanıcılar için tasarlanmıştır.
+
+## 5. Hedef Platform
+
+- **Windows 10 / 11**
