@@ -3,16 +3,16 @@
   // Adım 12: "Siparişi oluştur" Rust'taki ürün_olustur komutunu çağırır
   import { tarihYaz, tl } from "$lib/data";
   import { sepet } from "$lib/sepet.svelte";
-  import { ürünlerim } from "$lib/ürünler.svelte";
+  import { biletlerim } from "$lib/biletler.svelte";
 
   let isleniyor = $state(false);
 
   async function odemeYap() {
     isleniyor = true;
-    await ürünlerim.satinAl(sepet.kalemler);
+    await biletlerim.satinAl(sepet.kalemler);
     sepet.temizle();
     isleniyor = false;
-    window.location.href = "/ürünlerim";
+    window.location.href = "/biletlerim";
   }
 </script>
 
@@ -24,10 +24,10 @@
       <div class="bilgi">
         <strong>{k.etkinlik.baslik}</strong>
         <p>{tarihYaz(k.etkinlik.tarih)}</p>
-        <p>{k.ürün.ad} · {k.adet} adet</p>
+        <p>{k.bilet.ad} · {k.adet} adet</p>
       </div>
       <div class="sag">
-        <b>{tl(k.ürün.fiyat * k.adet)}</b>
+        <b>{tl(k.bilet.fiyat * k.adet)}</b>
         <button onclick={() => sepet.sil(i)} aria-label="Sil">🗑️</button>
       </div>
     </div>
