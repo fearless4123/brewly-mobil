@@ -1,85 +1,39 @@
-/* Adım 2: Global stil — tüm sayfaların ortak renkleri ve yardımcı sınıfları */
+/* Brewly global design tokens */
 :root {
-  --renk-ana: #e4002b;
-  --renk-koyu: #1a1a2e;
-  --zemin: #f4f5f7;
-  --kart: #ffffff;
-  --yazi: #1a1a2e;
-  --yazi-soluk: #6b7280;
-  --kenar: #e5e7eb;
+  --renk-ana: #6F452D;
+  --renk-koyu: #3A2418;
+  --zemin: #FBF7F2;
+  --kart: #FFFDFC;
+  --yazi: #2B211B;
+  --yazi-soluk: #6F625A;
+  --kenar: #E4D8CE;
   --radius: 14px;
   color-scheme: light;
-
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   color: var(--yazi);
   background: var(--zemin);
   -webkit-text-size-adjust: 100%;
 }
-
-/* Adım 15: Gece modu — <html data-tema="gece"> olunca değişkenler koyulaşır */
 :root[data-tema="gece"] {
-  --zemin: #0f1117;
-  --kart: #1a1d26;
-  --yazi: #f3f4f6;
-  --yazi-soluk: #9ca3af;
-  --kenar: #2a2e3a;
+  --renk-ana: #D09A73;
+  --renk-koyu: #241810;
+  --zemin: #17110D;
+  --kart: #241A14;
+  --yazi: #FFF8F2;
+  --yazi-soluk: #B9AAA0;
+  --kenar: #49392F;
   color-scheme: dark;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input {
-  font: inherit;
-  color: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-.sayfa {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.kart {
-  background: var(--kart);
-  border: 1px solid var(--kenar);
-  border-radius: var(--radius);
-}
-
-.btn {
-  width: 100%;
-  padding: 14px 18px;
-  border: 0;
-  border-radius: var(--radius);
-  background: var(--renk-ana);
-  color: #fff;
-  font-weight: 600;
-  text-align: center;
-}
-
-.btn:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.bos {
-  padding: 48px 16px;
-  text-align: center;
-  color: var(--yazi-soluk);
-}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+.sayfa { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+.kart { background: var(--kart); border: 1px solid var(--kenar); border-radius: var(--radius); }
+.btn { width: 100%; padding: 14px 18px; border: 0; border-radius: var(--radius); background: var(--renk-ana); color: #fff; font-weight: 600; text-align: center; }
+:root[data-tema="gece"] .btn { color: #241810; }
+.btn:disabled { opacity: .5; cursor: default; }
+.bos { padding: 48px 16px; text-align: center; color: var(--yazi-soluk); }
+@media (min-width: 768px) { .sayfa { max-width: 900px; margin: 0 auto; padding: 24px; } }
+@media (min-width: 1200px) { .sayfa { max-width: 1120px; } }
