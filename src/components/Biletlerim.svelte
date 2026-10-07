@@ -1,11 +1,11 @@
 <script lang="ts">
-  // Adım 13: Biletlerim — satın alınan biletleri kod ile listele
+  // Adım 13: Siparişlerim — satın alınan biletleri kod ile listele
   import { tarihYaz } from "$lib/data";
   import { biletlerim } from "$lib/biletler.svelte";
 </script>
 
 <div class="sayfa">
-  <h1>Biletlerim</h1>
+  <h1>Siparişlerim</h1>
 
   {#each biletlerim.liste as b (b.kod)}
     <div class="kart bilet">
@@ -15,12 +15,12 @@
         <p>{b.kategori} · {b.adet} kişi</p>
       </div>
       <div class="kod">
-        <span>Bilet kodu</span>
+        <span>Sipariş kodu</span>
         <code>{b.kod}</code>
       </div>
     </div>
   {:else}
-    <p class="bos">Henüz biletiniz yok.<br /><a href="/">Bir etkinlik seçin →</a></p>
+    <p class="bos">Henüz siparişiniz yok.<br /><a href="/">Bir kahve seçin →</a></p>
   {/each}
 </div>
 
