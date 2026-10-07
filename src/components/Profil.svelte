@@ -29,9 +29,9 @@
     <div class="kart profil">
       <div class="avatar">{kullanici[0].toLocaleUpperCase("tr")}</div>
       <h2>Merhaba, {kullanici}</h2>
-      <p>{biletlerim.liste.length} biletiniz var</p>
+      <p>{biletlerim.liste.length} siparişiniz var</p>
     </div>
-    <a class="btn" href="/biletlerim">Biletlerime git</a>
+    <a class="btn" href="/biletlerim">Siparişlerime git</a>
     <div class="bilgi-linkleri">
       <a href="/hakkinda">Hakkında</a><a href="/iletisim">İletişim</a><a href="/kosullar">Kullanım Koşulları</a><a href="/gizlilik">Gizlilik</a>
     </div>

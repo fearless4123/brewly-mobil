@@ -1,43 +1,43 @@
 <script lang="ts">
   // Adım 10: Sepet sayfası — kalemleri listele, toplamı göster
-  // Adım 12: "Ödemeyi tamamla" Rust'taki bilet_olustur komutunu çağırır
+  // Adım 12: "Siparişi oluştur" Rust'taki ürün_olustur komutunu çağırır
   import { tarihYaz, tl } from "$lib/data";
   import { sepet } from "$lib/sepet.svelte";
-  import { biletlerim } from "$lib/biletler.svelte";
+  import { ürünlerim } from "$lib/ürünler.svelte";
 
   let isleniyor = $state(false);
 
   async function odemeYap() {
     isleniyor = true;
-    await biletlerim.satinAl(sepet.kalemler);
+    await ürünlerim.satinAl(sepet.kalemler);
     sepet.temizle();
     isleniyor = false;
-    window.location.href = "/biletlerim";
+    window.location.href = "/ürünlerim";
   }
 </script>
 
 <div class="sayfa">
-  <h1>Sepetim</h1>
+  <h1>Sipariş Özeti</h1>
 
   {#each sepet.kalemler as k, i}
     <div class="kart kalem">
       <div class="bilgi">
         <strong>{k.etkinlik.baslik}</strong>
         <p>{tarihYaz(k.etkinlik.tarih)}</p>
-        <p>{k.bilet.ad} · {k.adet} adet</p>
+        <p>{k.ürün.ad} · {k.adet} adet</p>
       </div>
       <div class="sag">
-        <b>{tl(k.bilet.fiyat * k.adet)}</b>
+        <b>{tl(k.ürün.fiyat * k.adet)}</b>
         <button onclick={() => sepet.sil(i)} aria-label="Sil">🗑️</button>
       </div>
     </div>
   {:else}
-    <p class="bos">Sepetiniz boş.<br /><a href="/">Etkinliklere göz atın →</a></p>
+    <p class="bos">Sepetiniz boş.<br /><a href="/">Kahvelere göz atın →</a></p>
   {/each}
 
   {#if sepet.kalemler.length > 0}
     <div class="kart ozet">
-      <span>Toplam ({sepet.adet} bilet)</span>
+      <span>Toplam ({sepet.adet} ürün)</span>
       <b>{tl(sepet.toplam)}</b>
     </div>
     <button class="btn" onclick={odemeYap} disabled={isleniyor}>

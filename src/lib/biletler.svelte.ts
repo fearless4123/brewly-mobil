@@ -1,4 +1,3 @@
-// Adım 12: Satın alınan biletler — Rust'tan kod alır, localStorage'a kaydeder
 import { invoke, isTauri } from "@tauri-apps/api/core";
 import type { SepetKalemi } from "./sepet.svelte";
 
@@ -10,46 +9,23 @@ export interface Bilet {
   kategori: string;
   adet: number;
 }
-
-const ANAHTAR = "biletlerim";
-
+const ANAHTAR = "siparislerim";
 function yukle(): Bilet[] {
-  try {
-    if (typeof localStorage === "undefined") return [];
-    return JSON.parse(localStorage.getItem(ANAHTAR) ?? "[]");
-  } catch {
-    return [];
-  }
+  try { return typeof localStorage === "undefined" ? [] : JSON.parse(localStorage.getItem(ANAHTAR) ?? "[]"); }
+  catch { return []; }
 }
-
-// Tauri içinde çalışıyorsak Rust komutunu çağır, tarayıcıda ise JS ile üret
-async function biletKoduAl(etkinlikId: number): Promise<string> {
-  if (typeof window !== "undefined" && isTauri()) {
-    // Rust tarafındaki etkinlik_id parametresi JS'te camelCase yazılır: etkinlikId
-    return invoke<string>("bilet_olustur", { etkinlikId });
-  }
-  return `WEB-${etkinlikId}-${Date.now().toString(36).toUpperCase()}`;
+async function siparisKoduAl(): Promise<string> {
+  if (typeof window !== "undefined" && isTauri()) return invoke<string>("siparis_olustur");
+  return `BREW-WEB-${Date.now().toString(36).toUpperCase()}`;
 }
-
-class Biletlerim {
+class Siparislerim {
   liste = $state<Bilet[]>(yukle());
-
   async satinAl(kalemler: SepetKalemi[]) {
     for (const k of kalemler) {
-      const kod = await biletKoduAl(k.etkinlik.id);
-      this.liste.unshift({
-        kod,
-        baslik: k.etkinlik.baslik,
-        tarih: k.etkinlik.tarih,
-        mekan: k.etkinlik.mekan,
-        kategori: k.bilet.ad,
-        adet: k.adet,
-      });
+      const kod = await siparisKoduAl();
+      this.liste.unshift({ kod, baslik:k.etkinlik.baslik, tarih:k.etkinlik.tarih, mekan:k.etkinlik.mekan, kategori:k.bilet.ad, adet:k.adet });
     }
-    if (typeof localStorage !== "undefined") {
-      localStorage.setItem(ANAHTAR, JSON.stringify(this.liste));
-    }
+    if (typeof localStorage !== "undefined") localStorage.setItem(ANAHTAR, JSON.stringify(this.liste));
   }
 }
-
-export const biletlerim = new Biletlerim();
+export const biletlerim = new Siparislerim();
