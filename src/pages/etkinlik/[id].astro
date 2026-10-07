@@ -2,21 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import EtkinlikDetay from '../../components/EtkinlikDetay.svelte';
 import { etkinlikler, type Etkinlik } from '$lib/data';
-
-export function getStaticPaths() {
-  return etkinlikler.map((e) => ({
-    params: { id: String(e.id) },
-    props: { etkinlik: e },
-  }));
-}
-
-interface Props {
-  etkinlik: Etkinlik;
-}
-
-const { etkinlik } = Astro.props;
+export function getStaticPaths(){ return etkinlikler.map((e)=>({params:{id:String(e.id)},props:{etkinlik:e}})); }
+interface Props{etkinlik:Etkinlik}
+const {etkinlik}=Astro.props;
 ---
-
-<Layout title={`${etkinlik.baslik} — PassoKlon`}>
-  <EtkinlikDetay client:load etkinlik={etkinlik} />
-</Layout>
+<Layout title={`${etkinlik.baslik} — Brewly`}><EtkinlikDetay client:load etkinlik={etkinlik}/></Layout>
