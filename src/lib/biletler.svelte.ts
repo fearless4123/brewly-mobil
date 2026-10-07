@@ -2,7 +2,7 @@
 import { invoke, isTauri } from "@tauri-apps/api/core";
 import type { SepetKalemi } from "./sepet.svelte";
 
-export interface Bilet {
+export interface Siparis {
   kod: string;
   baslik: string;
   tarih: string;
@@ -11,9 +11,9 @@ export interface Bilet {
   adet: number;
 }
 
-const ANAHTAR = "biletlerim";
+const ANAHTAR = "siparislerim";
 
-function yukle(): Bilet[] {
+function yukle(): Siparis[] {
   try {
     if (typeof localStorage === "undefined") return [];
     return JSON.parse(localStorage.getItem(ANAHTAR) ?? "[]");
@@ -23,20 +23,20 @@ function yukle(): Bilet[] {
 }
 
 // Tauri içinde çalışıyorsak Rust komutunu çağır, tarayıcıda ise JS ile üret
-async function biletKoduAl(etkinlikId: number): Promise<string> {
+async function biletKoduAl(): Promise<string> {
   if (typeof window !== "undefined" && isTauri()) {
     // Rust tarafındaki etkinlik_id parametresi JS'te camelCase yazılır: etkinlikId
-    return invoke<string>("bilet_olustur", { etkinlikId });
+    return invoke<string>("siparis_olustur");
   }
-  return `WEB-${etkinlikId}-${Date.now().toString(36).toUpperCase()}`;
+  return `BREW-WEB-${Date.now().toString(36).toUpperCase()}`;
 }
 
-class Biletlerim {
-  liste = $state<Bilet[]>(yukle());
+class Siparislerim {
+  liste = $state<Siparis[]>(yukle());
 
   async satinAl(kalemler: SepetKalemi[]) {
     for (const k of kalemler) {
-      const kod = await biletKoduAl(k.etkinlik.id);
+      const kod = await biletKoduAl();
       this.liste.unshift({
         kod,
         baslik: k.etkinlik.baslik,
@@ -52,4 +52,4 @@ class Biletlerim {
   }
 }
 
-export const biletlerim = new Biletlerim();
+export const siparislerim = new Siparislerim();
