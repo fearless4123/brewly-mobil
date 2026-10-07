@@ -32,6 +32,9 @@
       <p>{biletlerim.liste.length} biletiniz var</p>
     </div>
     <a class="btn" href="/biletlerim">Biletlerime git</a>
+    <div class="bilgi-linkleri">
+      <a href="/hakkinda">Hakkında</a><a href="/iletisim">İletişim</a><a href="/kosullar">Kullanım Koşulları</a><a href="/gizlilik">Gizlilik</a>
+    </div>
     <button class="btn ikincil" onclick={cikisYap}>Çıkış yap</button>
   {:else}
     <h1>Giriş yap</h1>
@@ -110,4 +113,5 @@
     border: 1px solid var(--kenar);
     margin-top: 8px;
   }
+  .bilgi-linkleri{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}.bilgi-linkleri a{padding:10px;border:1px solid var(--kenar);border-radius:10px;text-align:center;color:var(--yazi-soluk)}
 </style>
