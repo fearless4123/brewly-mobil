@@ -1,34 +1,33 @@
-# Marka ve Tasarım Kılavuzu
-
-> ✍️ **Öğrenci Görevi:** Bu taslağı belirlediğiniz marka kimliği ve renklerine göre doldurun. Ayrıntılı yönerge için [`docs/tasks/week-3/05-branding.task.md`](tasks/week-3/05-branding.task.md) dosyasını inceleyin.
-
----
+# Brewly — Marka ve Tasarım Kılavuzu
 
 ## 1. Marka Renk Paleti
 
-Aşağıdaki tabloyu doldurun ve belirlediğiniz renkleri `src/styles/app.css` içerisine aktarın:
-
-| Kullanım Alanı | CSS Değişkeni | Açık Mod (Gündüz) | Koyu Mod (Gece) | Açıklama |
+| Token | Açık (light) hex | Koyu (dark) hex | Kullanım yeri | Kontrast |
 |---|---|---|---|---|
-| **Ana Renk (Primary)** | `--renk-ana` | `#[Renk Kodu]` | `#[Renk Kodu]` | Butonlar, aktif sekme, marka vurgusu |
-| **Koyu / Üst Bar** | `--renk-koyu` | `#[Renk Kodu]` | `#[Renk Kodu]` | Başlık alanı arka planı |
-| **Sayfa Zemini** | `--zemin` | `#[Renk Kodu]` | `#[Renk Kodu]` | Sayfa genel arka planı |
-| **Kart Yüzeyi** | `--kart` | `#[Renk Kodu]` | `#[Renk Kodu]` | Liste kartları, form alanları |
-| **Ana Yazı** | `--yazi` | `#[Renk Kodu]` | `#[Renk Kodu]` | Başlıklar ve okunabilir metin |
-| **Soluk Yazı** | `--yazi-soluk` | `#[Renk Kodu]` | `#[Renk Kodu]` | Açıklamalar, tarihler, etiketler |
-| **Kenarlık** | `--kenar` | `#[Renk Kodu]` | `#[Renk Kodu]` | Çizgiler, input sınırları |
+| `--renk-ana` | `#6F452D` | `#D09A73` | Butonlar, aktif sekmeler, marka vurgusu | Her temada uygun metin rengiyle ≥4.5:1 |
+| `--renk-koyu` | `#3A2418` | `#241810` | Üst bar ve marka alanları | Yüksek kontrast |
+| `--zemin` | `#FBF7F2` | `#17110D` | Sayfa zemini | Ana yazıyla ≥4.5:1 |
+| `--kart` | `#FFFDFC` | `#241A14` | Kartlar ve form alanları | Ana yazıyla ≥4.5:1 |
+| `--yazi` | `#2B211B` | `#FFF8F2` | Başlıklar ve gövde metni | Zemin üzerinde ≥4.5:1 |
+| `--yazi-soluk` | `#6F625A` | `#B9AAA0` | Açıklamalar ve ikincil metin | Okunabilir ikincil metin |
+| `--kenar` | `#E4D8CE` | `#49392F` | Kart ve input sınırları | Yüzey ayrımı |
+| `--radius` | `14px` | `14px` | Ortak köşe yuvarlaklığı | — |
 
----
+## 2. Tipografi
 
-## 2. Tipografi ve Yuvarlaklık
+- **Yazı tipi:** System UI (`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`)
+- **Köşe yuvarlaklığı:** `14px`
+- Tasarım dili sıcak, sade ve okunabilirdir.
 
-- **Yazı Tipi (Font):** System UI (`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`)
-- **Köşe Yuvarlaklığı (`--radius`):** `[Örn: 12px / 14px / 16px]`
+## 3. Logo ve İkon Konsepti
 
----
+- **Marka:** Brewly
+- **Sembol:** Stilize kahve çekirdeği ve buhar çizgileri.
+- **Slogan:** Kahveni seç, kişiselleştir ve siparişini hızlıca oluştur.
+- **Web logosu:** `public/brewly-logo.svg`
+- **Favicon:** `public/brewly-favicon.svg`
+- **Tauri launcher:** `src-tauri/icons/`
 
-## 3. Logo ve İkon Tanımı
+## 4. Tema Kuralları
 
-- **Logo Metni / Simgesi:** [Uygulamanızın logosu ne olacak?]
-- **Logo Dosyası:** `public/[logo-adi.svg]`
-- **Tauri Launcher İkonu:** `src-tauri/icons/`
+Açık temada sıcak krem zemin ve kahverengi marka rengi; koyu temada koyu kahve zemin ve açık kahve vurgu rengi kullanılır. UI renkleri sabit hex değerler yerine CSS tokenları üzerinden kullanılır.
