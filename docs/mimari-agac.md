@@ -1,53 +1,70 @@
-# Mimari Ağaç Yapısı ve Kapsam
+# Brewly — Mimari Ağaç Yapısı ve Kapsam
 
-> ✍️ **Öğrenci Görevi:** Bu taslağı uygulamanızın sayfalarına ve özelliklerine göre doldurun. Ayrıntılı yönerge için [`docs/tasks/week-3/07-hedefler-agac-yapisi.task.md`](tasks/week-3/07-hedefler-agac-yapisi.task.md) dosyasını inceleyin.
+## 1. Ana Dizin Mimarisi
 
----
-
-## 1. Sayfa ve Özellik Ağacı (Site & Feature Map)
+Dizin ağacı yalnızca ana klasörleri ve kök yapılandırmaları gösterir:
 
 ```
-[Projenizin Adı]
+hello-mobil/
+├── package.json
+├── astro.config.mjs
+├── tsconfig.json
+├── public/                 # Logo, favicon ve statik varlıklar
+├── src-tauri/              # Rust/Tauri çekirdeği ve native ayarlar
+├── src/
+│   ├── layouts/            # Ortak sayfa iskeleti
+│   ├── pages/              # Astro/MDX rota sayfaları
+│   ├── components/         # Svelte/React UI bileşenleri
+│   ├── lib/                # İş mantığı, state ve Rust çağrıları
+│   ├── types/              # TypeScript tipleri
+│   └── styles/             # Global tema ve tasarım tokenları
+└── docs/                   # Proje dokümantasyonu ve görevler
+```
+
+## 2. Sayfa ve Özellik Ağacı
+
+```
+Brewly
 ├── / (Ana Sayfa)
-│   ├── [Arama ve filtreleme özellikleri]
-│   └── [Listelenecek öğeler]
-│
-├── /[detay-sayfasi]/[id] (Öğe Detayı)
-│   ├── [Detay bilgileri]
-│   └── [Seçenek ve işlem butonları]
-│
-├── /[islem-sayfasi] (İşlem / Sepet / Kayıt)
-│   └── [Özet ve Rust backend komutu tetikleme]
-│
-├── /[sonuc-sayfasi] (Sonuçlar / Kodlarım)
-│   └── [Üretilen benzersiz kodlar ve geçmiş]
-│
-├── /profil (Kullanıcı & Tema)
-│   └── [Kullanıcı bilgisi ve tema geçişi]
-│
-└── Bilgi ve Yasal Sayfalar
+│   ├── Kahve arama ve kategori filtreleme
+│   └── Kahve listesi ve popüler ürünler
+├── /kahve/[id] (Kahve Detayı)
+│   ├── Boyut seçimi
+│   ├── Süt seçimi
+│   └── Ekstra shot / şurup ve siparişe ekleme
+├── /sepet (Sipariş)
+│   ├── Seçilen kahveler
+│   └── Toplam tutar ve Rust sipariş kodu çağrısı
+├── /biletlerim (Siparişlerim)
+│   └── Rust tarafından üretilen BREW-XXXXXX kodları
+├── /profil (Kullanıcı & Ayarlar)
+│   └── Tema ve bilgi sayfalarına erişim
+└── Bilgi Sayfaları
     ├── /hakkinda (MDX)
-    ├── /iletisim (Reaktif Form)
+    ├── /iletisim (Reaktif Svelte formu)
     ├── /kosullar (MDX)
     └── /gizlilik (MDX)
 ```
 
----
+## 3. Hedef Platform Matrisi
 
-## 2. Hedef Platform Matrisi
-
-| Platform Grubu | Hedef Sistemler | Paket Formatı |
+| Platform | Hedef Sistemler | Paket Formatı |
 |---|---|---|
-| **Masaüstü** | macOS (Apple Silicon / Intel) | `.dmg`, `.app` |
-| **Masaüstü** | Windows (10 / 11) | `.msi`, `.exe` |
-| **Masaüstü** | Linux (Ubuntu / Debian) | `.deb`, `.AppImage` |
-| **Mobil** | iOS (iPhone & iPad) | `.ipa` (Xcode) |
-| **Mobil** | Android (Telefon & Tablet) | `.apk`, `.aab` |
+| Masaüstü | macOS (Apple Silicon / Intel) | .dmg, .app |
+| Masaüstü | Windows 10 / 11 x64 | .msi, .exe |
+| Masaüstü | Linux (Ubuntu / Debian) | .deb, .AppImage |
+| Mobil | iOS (iPhone & iPad) | .ipa (Xcode) |
+| Mobil | Android (Telefon & Tablet) | .apk, .aab |
 
----
+Birincil test hedefi: **Windows 10 / 11**.
 
-## 3. Ekran Boyutları (Responsive Breakpoints)
+## 4. Responsive Breakpoints
 
-- **Telefon (375px - 430px):** Tek sütun, alt menü (`alt-menu`) sabit.
-- **Tablet (768px - 1024px):** 2 sütunlu ızgara düzeni.
-- **Masaüstü (1200px+):** 3 sütunlu ızgara, `max-width` ortalanmış görünüm.
+- **Telefon 375–430px:** tek sütun; alt menü sabit.
+- **Tablet 768–1024px:** iki sütunlu içerik/ızgara.
+- **Masaüstü 1200px+:** üç sütunlu düzen ve ortalanmış `max-width`.
+- **Büyük ekran:** içerik genişliği sınırlandırılır; kartlar gereksiz şekilde tam genişliğe yayılmaz.
+
+## 5. Temel Veri Akışı
+
+Kullanıcı → kahve listesi → kişiselleştirme → sepet → Rust sipariş kodu → sipariş sonucu → profil/sipariş geçmişi.
