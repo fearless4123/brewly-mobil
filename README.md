@@ -10,7 +10,7 @@
 
 <br><br>
 
-# PassoKlon — Mobil Programlama
+# Brewly — Kahve Sipariş Uygulaması
 <sub>İstinye Üniversitesi · Meslek Yüksekokulu</sub>
 
 <p>
@@ -69,7 +69,7 @@
 | **Blackboard Kursu** | Kurs Kodu: `2026–2027–1–11283–1` |
 | **Kaynak Depo** | [`keyvanarasteh/hello-mobil`](https://github.com/keyvanarasteh/hello-mobil) |
 | **Telegram Grubu** | `App Development - 2026` *(Ders içi kapalı grup · Bağlantı sınıfta paylaşılır)* |
-| **Geliştirici / Öğrenci** | *`[Adınız Soyadınız — Öğrenci No — Şube 1]`* &nbsp;·&nbsp; [`docs/proje-fikri.md`](docs/proje-fikri.md) |
+| **Geliştirici / Öğrenci** | *`Yağız Genç — 2520191020 — Şube 1`* &nbsp;·&nbsp; [`docs/proje-fikri.md`](docs/proje-fikri.md) |
 
 <br>
 
@@ -100,10 +100,10 @@
 <p><i>Repoyu fork'ladıktan sonra kendi bilgilerinizi doldurunuz:</i></p>
 
 <ul>
-  <li><b>Adı Soyadı:</b> <code>[Adınız Soyadınız]</code></li>
-  <li><b>Öğrenci No:</b> <code>[Öğrenci Numaranız]</code></li>
+  <li><b>Adı Soyadı:</b> <code>Yağız Genç</code></li>
+  <li><b>Öğrenci No:</b> <code>2520191020</code></li>
   <li><b>Şube:</b> <code>Şube 1</code></li>
-  <li><b>GitHub:</b> <code>[@kullanici-adiniz]</code></li>
+  <li><b>GitHub:</b> <code>@fearless4123</code></li>
   <li><b>Proje Fikri:</b> <a href="docs/proje-fikri.md">docs/proje-fikri.md</a></li>
 </ul>
 
@@ -117,7 +117,7 @@
 
 Bu proje, İstinye Üniversitesi Bilişim Güvenliği Teknolojisi programı **MYO063 Mobil Programlama** dersi kapsamında geliştirilmiştir.
 
-Uygulama, popüler bilet ve etkinlik platformu **Passo**'nun temel işlevlerini (etkinlik keşfi, biletleme, sepet, Rust ile bilet/doğrulama kodu üretimi, kullanıcı profili ve dinamik tema) modern bir çapraz platform mimarisi üzerinde uygular.
+Uygulama, kahve siparişi akışını; ürün keşfi, kişiselleştirme, sepet, Rust ile sipariş kodu üretimi, kullanıcı profili ve dinamik temayı modern bir masaüstü mimarisi üzerinde uygular.
 
 Öğrenciler bu şablonu kendi GitHub hesaplarına fork'layarak kendi özgün mobil/masaüstü ürün fikirlerine dönüştürürler.
 
@@ -142,11 +142,11 @@ Bu proje salt bir web sayfası değil; tek bir kod tabanından **iOS, Android, m
 
 ## ✨ Temel Yetenekler
 
-- 🏟️ **Keşfet (Ana Sayfa):** Canlı arama kutusu ve kategori çipleriyle anında filtrelenen etkinlik kartları.
-- 🎫 **Etkinlik Detay:** Seçilen etkinliğin kategori, fiyat ve adet seçenekleri ile sepete ekleme akışı.
-- 🛒 **Sepet Yönetimi:** Dinamik tutar hesabı, kalem silme ve ödemeyi tamamlama.
-- 🎟️ **Biletlerim:** Rust backend'i tarafından üretilen benzersiz bilet kodları (`PSK-XXX-XXXXXXX`) ve yerel depolama.
-- 👤 **Profil & Tema:** Kullanıcı bilgileri ve açılışta parlamayı önleyen (blocking script) **Gece / Gündüz** modu.
+- ☕ **Keşfet:** Espresso, Americano, Latte, Cappuccino ve Mocha gibi kahveler; arama ve kategori filtreleri.
+- 🥛 **Kahve Detay:** Boyut, süt ve ekstra shot/şurup seçenekleriyle kişiselleştirme.
+- 🛒 **Sipariş Yönetimi:** Dinamik toplam tutar, seçilen ürünlerin düzenlenmesi ve onay akışı.
+- 🔑 **Sipariş Kodu:** Rust backend'i tarafından üretilen benzersiz `BREW-XXXXXX` kodu.
+- 👤 **Profil & Tema:** Kullanıcı bilgileri, bilgi sayfaları ve **Gece / Gündüz** modu.
 - 📖 **Rehber (MDX):** Projenin dokümantasyonunu ve React entegrasyonunu gösteren rehber sayfası.
 
 ---
