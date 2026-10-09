@@ -28,7 +28,7 @@ Brewly
 ├── / (Ana Sayfa)
 │   ├── Kahve arama ve kategori filtreleme
 │   └── Kahve listesi ve popüler ürünler
-├── /kahve/[id] (Kahve Detayı)
+├── /etkinlik/[id] (Kahve Detayı)
 │   ├── Boyut seçimi
 │   ├── Süt seçimi
 │   └── Ekstra shot / şurup ve siparişe ekleme
@@ -45,6 +45,19 @@ Brewly
     ├── /kosullar (MDX)
     └── /gizlilik (MDX)
 ```
+
+**Rota adı notu:** kahve detayı ve siparişlerim ekranları şablondan gelen `/etkinlik/[id]` ve `/biletlerim` rotalarında çalışır. Rotalar `/kahve/[id]` ve `/siparislerim` olarak yeniden adlandırılırsa bu ağaç aynı PR'da güncellenir.
+
+**Dil rotaları:** dört bilgi sayfası dört dilde yayınlanır. Türkçe kök rotadadır; diğer diller dil önekiyle açılır ve `<html>` etiketi dile göre `lang` ve `dir` alır.
+
+| Dil | Önek | Örnek | Yön |
+|---|---|---|---|
+| Türkçe | yok | `/hakkinda` | `ltr` |
+| English | `/en` | `/en/hakkinda` | `ltr` |
+| العربية | `/ar` | `/ar/hakkinda` | `rtl` |
+| فارسی | `/fa` | `/fa/hakkinda` | `rtl` |
+
+Sayfalar arası dil geçişi `src/components/DilSecici.astro` ile yapılır.
 
 ## 3. Hedef Platform Matrisi
 
