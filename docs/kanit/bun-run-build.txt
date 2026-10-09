@@ -1,0 +1,47 @@
+$ astro build
+20:24:59 [types] Generated 34ms
+20:24:59 [build] output: "static"
+20:24:59 [build] mode: "static"
+20:24:59 [build] directory: ./dist/
+20:24:59 [build] Collecting build info...
+20:24:59 [build] ✓ Completed in 90ms.
+20:24:59 [build] Building static entrypoints...
+20:25:00 [vite] ✓ built in 1.16s
+20:25:00 [vite] ✓ built in 249ms
+20:25:00 [build] Rearranging server assets...
+
+ generating static routes 
+20:25:00   ├─ /ar/gizlilik/index.html (+11ms) 
+20:25:00   ├─ /ar/hakkinda/index.html (+11ms) 
+20:25:00   ├─ /ar/iletisim/index.html (+3ms) 
+20:25:00   ├─ /ar/kosullar/index.html (+2ms) 
+20:25:00   ├─ /biletlerim/index.html(node:45566) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ (+3ms) 
+20:25:00   ├─ /en/gizlilik/index.html (+8ms) 
+20:25:00   ├─ /en/hakkinda/index.html (+3ms) 
+20:25:00   ├─ /en/iletisim/index.html (+2ms) 
+20:25:00   ├─ /en/kosullar/index.html (+4ms) 
+20:25:00   ├─ /etkinlik/1/index.html (+4ms) 
+20:25:00   ├─ /etkinlik/2/index.html (+2ms) 
+20:25:00   ├─ /etkinlik/3/index.html (+10ms) 
+20:25:00   ├─ /etkinlik/4/index.html (+1ms) 
+20:25:00   ├─ /etkinlik/5/index.html (+1ms) 
+20:25:00   ├─ /etkinlik/6/index.html (+1ms) 
+20:25:00   ├─ /etkinlik/7/index.html (+1ms) 
+20:25:00   ├─ /fa/gizlilik/index.html (+2ms) 
+20:25:00   ├─ /fa/hakkinda/index.html (+2ms) 
+20:25:00   ├─ /fa/iletisim/index.html (+2ms) 
+20:25:00   ├─ /fa/kosullar/index.html (+1ms) 
+20:25:00   ├─ /gizlilik/index.html (+1ms) 
+20:25:00   ├─ /hakkinda/index.html (+3ms) 
+20:25:00   ├─ /iletisim/index.html (+2ms) 
+20:25:00   ├─ /kosullar/index.html (+3ms) 
+20:25:00   ├─ /profil/index.html (+3ms) 
+20:25:00   ├─ /sepet/index.html (+3ms) 
+20:25:00   ├─ /index.html (+4ms) 
+20:25:00 ✓ Completed in 212ms.
+
+20:25:00 [build] ✓ Completed in 1.56s.
+20:25:00 [build] 27 page(s) built in 1.69s
+20:25:00 [build] Complete!
