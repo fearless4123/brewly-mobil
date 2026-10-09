@@ -13,6 +13,8 @@ Bu sayfa projenin `docs/` altındaki ana belgelerini tek yerde toplar.
 - [Kurallar](kurallar.md)
 - [Teslim](teslim.md)
 - [Kaynaklar](kaynaklar.md)
+- [Batch 01 ilerleme matrisi](ilerleme-batch-01.md)
+- [Ajan uyum testi](ajan-uyum-testi.md)
 - [Haftalık görevler](tasks/week-3/)
 - [K1 değerlendirme](k1/01.review.md)
 

@@ -19,6 +19,8 @@ Dokümantasyon tekrar edilmez, link edilir. Dizin ağaçları, renk tabloları, 
 | [docs/tasks/](docs/tasks/) | Eğitmen görevleri ve haftalık görev belgeleri |
 | [docs/k1/01.review.md](docs/k1/01.review.md) | Eğitmen değerlendirme notu |
 | [docs/indeks.md](docs/indeks.md) | Tüm proje dokümanlarının merkezi indeksi |
+| [docs/ilerleme-batch-01.md](docs/ilerleme-batch-01.md) | Batch 01 kontrol matrisi ve derleme kanıtı |
+| [docs/ajan-uyum-testi.md](docs/ajan-uyum-testi.md) | Ajan uyum testi kaydı |
 
 Yeni veya değişen dokümanlarda önce bu indeksi ve ilgili kaynak belgeyi kontrol et.
 
