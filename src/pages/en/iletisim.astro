@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DilSecici from '../../components/DilSecici.astro';
+import IletisimFormu from '../../components/IletisimFormu.svelte';
+---
+<Layout title="Brewly — Contact">
+<div class="sayfa"><div class="kart" style="padding:24px">
+<DilSecici sayfa="iletisim" />
+<h1>Contact</h1>
+<IletisimFormu client:load dil="en" />
+</div></div>
+</Layout>

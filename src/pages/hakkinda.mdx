@@ -2,12 +2,17 @@
 layout: ../layouts/Layout.astro
 title: Brewly — Hakkında
 ---
+import DilSecici from '../components/DilSecici.astro';
 import CanliRozet from '../components/react/CanliRozet';
 
-<div class="sayfa"><div class="kart" style="padding:24px">
+<div class="sayfa">
+
+<div class="kart" style="padding:24px">
+
+<DilSecici sayfa="hakkinda" />
+
 # Brewly — Hakkında
 
-## 🇹🇷 Türkçe
 Brewly, kahve çeşitlerini inceleyip boyut, süt ve ekstra seçeneklerini kişiselleştirerek hızlı sipariş oluşturmayı sağlayan bir masaüstü uygulamasıdır.
 
 Geliştirici: **Yağız Genç** · Bilişim Güvenliği Teknolojisi · İstinye Üniversitesi.
@@ -16,27 +21,6 @@ Teknolojiler: Tauri v2, Astro, Svelte 5, React, MDX ve Rust.
 
 <CanliRozet client:load etiket="Brewly canlı bileşeni" />
 
-## 🇬🇧 English
-Brewly is a desktop coffee ordering application where users personalize size, milk and extras before creating an order.
+</div>
 
-Developer: **Yağız Genç** · Information Security Technologies · Istinye University.
-
-Technologies: Tauri v2, Astro, Svelte 5, React, MDX and Rust.
-
-<div dir="rtl">
-
-## 🇸🇦 العربية
-Brewly هو تطبيق لطلب القهوة يتيح للمستخدم تخصيص الحجم والحليب والإضافات ثم إنشاء طلب بسرعة.
-
-المطور: **Yağız Genç** · تقنيات أمن المعلومات · جامعة إستينيا.
-
-التقنيات: Tauri v2 وAstro وSvelte 5 وReact وMDX وRust.
-
-## 🇮🇷 فارسی
-Brewly یک برنامه سفارش قهوه است که به کاربر اجازه می‌دهد اندازه، نوع شیر و افزودنی‌ها را شخصی‌سازی کند و سفارش بسازد.
-
-توسعه‌دهنده: **Yağız Genç** · فناوری‌های امنیت اطلاعات · دانشگاه ایستینیه.
-
-فناوری‌ها: Tauri v2، Astro، Svelte 5، React، MDX و Rust.
-
-</div></div></div>
+</div>

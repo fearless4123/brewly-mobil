@@ -2,28 +2,20 @@
 layout: ../layouts/Layout.astro
 title: Brewly — Gizlilik Politikası
 ---
-<div class="sayfa"><div class="kart" style="padding:24px">
+import DilSecici from '../components/DilSecici.astro';
+
+<div class="sayfa">
+
+<div class="kart" style="padding:24px">
+
+<DilSecici sayfa="gizlilik" />
+
 # Brewly — Gizlilik Politikası
 
-## 🇹🇷 Türkçe
 Brewly bir eğitim projesidir. Kullanıcı tercihleri ve demo sipariş geçmişi cihazdaki <code>localStorage</code> alanında tutulabilir. Uygulama kişisel verileri harici bir sunucuda saklamak üzere tasarlanmamıştır.
 
 Tauri WebView içinde harici izleme çerezleri kullanılmaz. Gerçek ve hassas kişisel veri girilmemesi önerilir. Bu eğitim uygulaması ticari bir veri işleme hizmeti değildir; KVKK kapsamında gerçek kullanıcı verisi toplama amacı taşımaz.
 
-## 🇬🇧 English
-Brewly is an educational project. User preferences and demo order history may be stored in the device's <code>localStorage</code>. The application is not designed to store personal data on an external server.
-
-<div dir="rtl">
-
-## 🇸🇦 العربية
-Brewly مشروع تعليمي. قد تُحفظ تفضيلات المستخدم وسجل الطلبات التجريبي في <code>localStorage</code> على الجهاز. لم يُصمم التطبيق لتخزين البيانات الشخصية على خادم خارجي.
-
-لا يُقصد استخدام ملفات تعريف ارتباط خارجية للتتبع.
-
-## 🇮🇷 فارسی
-Brewly یک پروژه آموزشی است. تنظیمات کاربر و تاریخچه سفارش آزمایشی ممکن است در <code>localStorage</code> دستگاه ذخیره شود. برنامه برای ذخیره اطلاعات شخصی روی سرور خارجی طراحی نشده است.
-
-کوکی‌های خارجی برای ردیابی در نظر گرفته نشده‌اند.
+</div>
 
 </div>
-</div></div>
