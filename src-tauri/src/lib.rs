@@ -1,3 +1,4 @@
+mod permissions;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 #[tauri::command]
@@ -10,7 +11,11 @@ fn siparis_olustur() -> String {
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![siparis_olustur])
+        .plugin(tauri_plugin_notification::init())
+        .invoke_handler(tauri::generate_handler![
+            permissions::permissions_status,
+            permissions::permission_request,
+            permissions::bildirim_gonder,siparis_olustur])
         .run(tauri::generate_context!())
         .expect("error while running Brewly");
 }
