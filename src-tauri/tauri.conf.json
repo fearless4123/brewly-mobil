@@ -1,9 +1,49 @@
 {
-  "$schema":"https://schema.tauri.app/config/2",
-  "productName":"Brewly",
-  "version":"0.1.0",
-  "identifier":"edu.istinye.brewly",
-  "build":{"beforeDevCommand":"bun run dev","devUrl":"http://localhost:1420","beforeBuildCommand":"bun run build","frontendDist":"../dist"},
-  "app":{"windows":[{"title":"Brewly — Kahve Siparişi","width":420,"height":820}],"security":{"csp":null}},
-  "bundle":{"active":true,"targets":"all","icon":["icons/32x32.png","icons/128x128.png","icons/128x128@2x.png","icons/icon.icns","icons/icon.ico"]}
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Brewly",
+  "version": "0.1.0",
+  "identifier": "edu.istinye.brewly",
+  "build": {
+    "beforeDevCommand": "bun run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "bun run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Brewly — Kahve Siparişi",
+        "width": 420,
+        "height": 820,
+        "minWidth": 360,
+        "minHeight": 640
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "category": "Utility",
+    "shortDescription": "Brewly",
+    "longDescription": "Brewly — İstinye Üniversitesi MYO063 Mobil Programlama projesi",
+    "macOS": {
+      "minimumSystemVersion": "10.15"
+    },
+    "iOS": {
+      "minimumSystemVersion": "15.0"
+    },
+    "android": {
+      "minSdkVersion": 24
+    }
+  }
 }
